@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var hereLocationView: HereLocationView!
+    @IBOutlet weak var purposeLocationView: PurposeLocationView!
+    @IBOutlet weak var compassView: CompassView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

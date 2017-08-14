@@ -86,6 +86,11 @@
                             <constraint firstAttribute="trailing" secondItem="KoM-2n-v5X" secondAttribute="trailing" id="zQT-FR-KsE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="compassView" destination="OMI-kw-5IM" id="AJQ-Le-7X8"/>
+                        <outlet property="hereLocationView" destination="xWx-47-0eU" id="bKT-pk-jBV"/>
+                        <outlet property="purposeLocationView" destination="zVx-mf-ZQa" id="6PN-md-az8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

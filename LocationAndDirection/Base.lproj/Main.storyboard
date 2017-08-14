@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-2n-v5X">
                                 <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-47-0eU">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-47-0eU" customClass="HereLocationView" customModule="LocationAndDirection" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="176" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="284" id="QfQ-p7-UXu"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-mf-ZQa">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-mf-ZQa" customClass="PurposeLocationView" customModule="LocationAndDirection" customModuleProvider="target">
                                         <rect key="frame" x="191" y="8" width="176" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -56,7 +56,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-Fz-D6L">
                                 <rect key="frame" x="0.0" y="347" width="375" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-kw-5IM">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-kw-5IM" customClass="CompassView" customModule="LocationAndDirection" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

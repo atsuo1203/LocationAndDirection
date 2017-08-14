@@ -161,6 +161,9 @@ longitude</string>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="arrowImageView" destination="ia2-En-Kx7" id="AWK-4j-LPF"/>
+                        <outlet property="compassImageView" destination="SN1-lK-FMu" id="B8o-ie-IBr"/>
+                        <outlet property="compassLabel" destination="oTT-Sc-QVc" id="0BV-T9-ZAD"/>
                         <outlet property="compassView" destination="OMI-kw-5IM" id="AJQ-Le-7X8"/>
                         <outlet property="hereLabel" destination="hxO-tM-Iqa" id="8Ev-Gm-60C"/>
                         <outlet property="hereLat" destination="JkJ-QV-htr" id="qrW-lm-6RG"/>

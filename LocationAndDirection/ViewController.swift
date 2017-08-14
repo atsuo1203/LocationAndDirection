@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Foundation
 
 class ViewController: UIViewController ,CLLocationManagerDelegate{
 
@@ -24,7 +25,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
     var locationManager:CLLocationManager!
-
+    
+    //geoDirection()で計算を行うため存在する
+    var lat1,lng1,lat2,lng2: CLLocationDegrees!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
     //現在地取得の際のManager 毎秒連続して位置情報を取得している
+    //基本的にここがずっと呼ばれていることになる
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else {
             return
@@ -82,8 +86,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         hereLat.text = latitude.description
         hereLong.text = longtitude.description
         
-        print(resultLocation)
+        lat1 = latitude
+        lng1 = longtitude
         
+        if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
+            geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
+        }
     }
     
     //緯度経度から住所を決定し、現在地のlabelに貼り付ける
@@ -114,7 +122,25 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
             let res = response?.first
             self.purposLat.text = res?.location?.coordinate.latitude.description
             self.purposLong.text = res?.location?.coordinate.longitude.description
+            
+            //計算するために保持する
+            self.lat2 = res?.location?.coordinate.latitude
+            self.lng2 = res?.location?.coordinate.longitude
         }
     }
+    
+    //方位を計算
+    private func geoDirection(lat1: CLLocationDegrees, lng1: CLLocationDegrees, lat2: CLLocationDegrees, lng2: CLLocationDegrees) {
+        // 緯度経度 lat1, lng1 の点を出発として、緯度経度 lat2, lng2 への方位
+        // 北を０度で右回りの角度０～３６０度
+        let Y = cos(lng2 * Double.pi / 180) * sin(lat2 * Double.pi / 180 - lat1 * Double.pi / 180);
+        let X = cos(lng1 * Double.pi / 180) * sin(lng2 * Double.pi / 180) - sin(lng1 * Double.pi / 180) * cos(lng2 * Double.pi / 180) * cos(lat2 * Double.pi / 180 - lat1 * Double.pi / 180);
+        var dirE0 = 180 * atan2(Y, X) / Double.pi; // 東向きが０度の方向
+        if (dirE0 < 0) {
+            dirE0 = dirE0 + 360; //0～360 にする。
+        }
+        //let dirN0 = (dirE0 + 90) % 360; //(dirE0+90)÷360の余りを出力 北向きが０度の方向
+        let dirN0 = (dirE0 + 90).truncatingRemainder(dividingBy: 360)
+        print(dirN0)
+    }
 }
-

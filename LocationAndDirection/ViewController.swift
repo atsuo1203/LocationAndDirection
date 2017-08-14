@@ -112,6 +112,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         print("".appendingFormat("%.2f", newHeading.magneticHeading))
         print("aaaa")
+        print(newHeading.magneticHeading)
     }
     
     //緯度経度から住所を決定し、現在地のlabelに貼り付ける
@@ -170,26 +171,30 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     
     //compassが回転する
     private func compassRoutetion(direciton: Double){
+        var d = direciton
+        if d > 360 {
+            d = d - 360
+        }
+        
         //iが回転させたい角度
-        let i = CGFloat(-direciton)
+        let i = CGFloat(-d)
         let angle = i * CGFloat.pi / 180
         compassImageView.transform = CGAffineTransform(rotationAngle: angle)
         
         var directionWord = ""
-        var directionDouble = direciton.description
+        var directionDouble = d.description
        
         if directionDouble.contains(".") {
-            directionDouble = direciton.description.components(separatedBy: ".").first!
+            directionDouble = d.description.components(separatedBy: ".").first!
         }
         
-        
-        if (direciton >= 315) || (direciton < 45) {
+        if (d >= 315) || (d < 45) {
             directionWord = "北"
-        }else if (direciton >= 45) && (direciton < 135) {
+        }else if (d >= 45) && (d < 135) {
             directionWord = "東"
-        }else if (direciton >= 135) && (direciton < 225) {
+        }else if (d >= 135) && (d < 225) {
             directionWord = "南"
-        }else if (direciton >= 225) && (direciton < 315) {
+        }else if (d >= 225) && (d < 315) {
             directionWord = "西"
         }
         

@@ -37,11 +37,6 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         purposeSetting()
         getLocation()
-        
-        //iが回転させたい角度
-        let i = CGFloat(0)
-        let angle = i * CGFloat.pi / 180
-        compassImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,7 +93,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         lng1 = longtitude
         
         if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
-            geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
+            let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
+            compassRoutetion(direciton: direction)
         }
     }
     
@@ -142,7 +138,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
     //方位を計算
-    private func geoDirection(lat1: CLLocationDegrees, lng1: CLLocationDegrees, lat2: CLLocationDegrees, lng2: CLLocationDegrees) {
+    private func geoDirection(lat1: CLLocationDegrees, lng1: CLLocationDegrees, lat2: CLLocationDegrees, lng2: CLLocationDegrees) -> Double {
         // 緯度経度 lat1, lng1 の点を出発として、緯度経度 lat2, lng2 への方位
         // 北を０度で右回りの角度０～３６０度
         let Y = cos(lng2 * Double.pi / 180) * sin(lat2 * Double.pi / 180 - lat1 * Double.pi / 180);
@@ -153,6 +149,14 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         }
         //let dirN0 = (dirE0 + 90) % 360; //(dirE0+90)÷360の余りを出力 北向きが０度の方向
         let dirN0 = (dirE0 + 90).truncatingRemainder(dividingBy: 360)
-        print(dirN0)
+        return dirN0
+    }
+    
+    //compassが回転する
+    private func compassRoutetion(direciton: Double){
+        //iが回転させたい角度
+        let i = CGFloat(-direciton)
+        let angle = i * CGFloat.pi / 180
+        compassImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
 }

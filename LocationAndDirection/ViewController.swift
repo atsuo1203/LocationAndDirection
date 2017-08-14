@@ -37,6 +37,11 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         purposeSetting()
         getLocation()
+        
+        //iが回転させたい角度
+        let i = CGFloat(0)
+        let angle = i * CGFloat.pi / 180
+        compassImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,7 +116,11 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
 //            print(res?.subLocality ?? "取れてません")
 //            print((res?.administrativeArea)! + (res?.locality)! + (res?.subLocality)!)
             
-            let label = (res?.administrativeArea)! + (res?.locality)! + (res?.subLocality)!
+            let admin = res?.administrativeArea ?? ""
+            let locality = res?.locality ?? ""
+            let subLocality = res?.subLocality ?? ""
+            
+            let label = admin + locality + subLocality
             self.hereLabel.text = label
         }
     }

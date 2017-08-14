@@ -139,7 +139,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     
     //目的地のlabelや住所を手動入力
     private func purposeSetting(){
-        let address = "埼玉県春日部市大沼"
+        let address = "東京都大田区蒲田４丁目５０−１０"
         self.purposeLabel.text = address
         let geocorder = CLGeocoder()
         geocorder.geocodeAddressString(address) { (response, error) in

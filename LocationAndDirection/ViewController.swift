@@ -25,6 +25,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var compassImageView: UIImageView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
+    @IBAction func buttonPushed(_ sender: UIButton) {
+        print("押されました")
+    }
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
     var locationManager:CLLocationManager!

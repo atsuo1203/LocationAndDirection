@@ -21,70 +21,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-2n-v5X">
-                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-BE-WvK" userLabel="TopView">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-47-0eU" customClass="HereLocationView" customModule="LocationAndDirection" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="176" height="284"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="176" id="O9L-BC-nJk"/>
-                                            <constraint firstAttribute="height" constant="284" id="QfQ-p7-UXu"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-2n-v5X" userLabel="UpView">
+                                        <rect key="frame" x="0.0" y="8" width="343" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-47-0eU" customClass="HereLocationView" customModule="LocationAndDirection" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="160" height="284"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-mf-ZQa" customClass="PurposeLocationView" customModule="LocationAndDirection" customModuleProvider="target">
+                                                <rect key="frame" x="175" y="8" width="160" height="284"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-mf-ZQa" customClass="PurposeLocationView" customModule="LocationAndDirection" customModuleProvider="target">
-                                        <rect key="frame" x="191" y="8" width="176" height="284"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="176" id="8ll-tp-nyM"/>
-                                            <constraint firstAttribute="height" constant="284" id="G0V-Cj-n8W"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-Fz-D6L" userLabel="DownView">
+                                        <rect key="frame" x="0.0" y="316" width="343" height="323"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-kw-5IM" customClass="CompassView" customModule="LocationAndDirection" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="327" height="307"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="xWx-47-0eU" firstAttribute="leading" secondItem="KoM-2n-v5X" secondAttribute="leading" constant="8" id="6so-L4-wRR"/>
-                                    <constraint firstAttribute="width" constant="375" id="F2p-RC-sMq"/>
-                                    <constraint firstAttribute="trailing" secondItem="zVx-mf-ZQa" secondAttribute="trailing" constant="8" id="OEf-NW-6cL"/>
-                                    <constraint firstItem="zVx-mf-ZQa" firstAttribute="top" secondItem="KoM-2n-v5X" secondAttribute="top" constant="8" id="X9F-NZ-JS4"/>
-                                    <constraint firstItem="xWx-47-0eU" firstAttribute="top" secondItem="KoM-2n-v5X" secondAttribute="top" constant="8" id="c3G-SO-1bQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="xWx-47-0eU" secondAttribute="bottom" constant="8" id="l0v-HP-Ego"/>
-                                    <constraint firstAttribute="bottom" secondItem="zVx-mf-ZQa" secondAttribute="bottom" constant="8" id="moF-YO-QQc"/>
-                                    <constraint firstAttribute="height" constant="300" id="rsd-Zz-Sx5"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-Fz-D6L">
-                                <rect key="frame" x="0.0" y="347" width="375" height="300"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-kw-5IM" customClass="CompassView" customModule="LocationAndDirection" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="359" height="284"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="284" id="bHF-RD-elj"/>
-                                            <constraint firstAttribute="width" constant="359" id="ysW-gv-IBC"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OMI-kw-5IM" secondAttribute="bottom" constant="8" id="8ms-i5-WY8"/>
-                                    <constraint firstAttribute="width" constant="375" id="IIs-nh-W5X"/>
-                                    <constraint firstItem="OMI-kw-5IM" firstAttribute="top" secondItem="Mi4-Fz-D6L" secondAttribute="top" constant="8" id="JbX-g6-qev"/>
-                                    <constraint firstItem="OMI-kw-5IM" firstAttribute="leading" secondItem="Mi4-Fz-D6L" secondAttribute="leading" constant="8" id="hsU-5i-sJ2"/>
-                                    <constraint firstAttribute="trailing" secondItem="OMI-kw-5IM" secondAttribute="trailing" constant="8" id="kdA-Bq-IUg"/>
-                                    <constraint firstAttribute="height" constant="300" id="u60-Jd-f7M"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Mi4-Fz-D6L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="00q-H7-KD2"/>
-                            <constraint firstItem="KoM-2n-v5X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PfK-sa-8YX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mi4-Fz-D6L" secondAttribute="bottom" constant="20" id="W7h-3g-ETP"/>
-                            <constraint firstItem="KoM-2n-v5X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="eiF-Za-9QC"/>
-                            <constraint firstAttribute="trailing" secondItem="Mi4-Fz-D6L" secondAttribute="trailing" id="x7z-CO-f3e"/>
-                            <constraint firstAttribute="trailing" secondItem="KoM-2n-v5X" secondAttribute="trailing" id="zQT-FR-KsE"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="compassView" destination="OMI-kw-5IM" id="AJQ-Le-7X8"/>

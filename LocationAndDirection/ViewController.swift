@@ -15,6 +15,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var purposeLocationView: PurposeLocationView!
     @IBOutlet weak var compassView: CompassView!
     
+    @IBOutlet weak var hereLabel: UILabel!
+    @IBOutlet weak var hereLat: UILabel!
+    @IBOutlet weak var hereLong: UILabel!
+    @IBOutlet weak var purposeLabel: UILabel!
+    @IBOutlet weak var purposLat: UILabel!
+    @IBOutlet weak var purposLong: UILabel!
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
     var locationManager:CLLocationManager!

@@ -145,7 +145,13 @@ longitude</string>
                     </view>
                     <connections>
                         <outlet property="compassView" destination="OMI-kw-5IM" id="AJQ-Le-7X8"/>
+                        <outlet property="hereLabel" destination="hxO-tM-Iqa" id="8Ev-Gm-60C"/>
+                        <outlet property="hereLat" destination="JkJ-QV-htr" id="qrW-lm-6RG"/>
                         <outlet property="hereLocationView" destination="xWx-47-0eU" id="bKT-pk-jBV"/>
+                        <outlet property="hereLong" destination="dYH-UY-zyQ" id="Zc8-2X-Rgs"/>
+                        <outlet property="purposLat" destination="zjJ-1g-FIW" id="a3s-ya-Nfb"/>
+                        <outlet property="purposLong" destination="Sdb-WX-ezt" id="rjY-WN-q1d"/>
+                        <outlet property="purposeLabel" destination="sgg-qb-Q3m" id="Rvc-ta-yCx"/>
                         <outlet property="purposeLocationView" destination="zVx-mf-ZQa" id="6PN-md-az8"/>
                     </connections>
                 </viewController>

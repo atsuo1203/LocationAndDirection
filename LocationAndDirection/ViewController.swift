@@ -161,5 +161,25 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         let i = CGFloat(-direciton)
         let angle = i * CGFloat.pi / 180
         compassImageView.transform = CGAffineTransform(rotationAngle: angle)
+        
+        var directionWord = ""
+        var directionDouble = direciton.description
+       
+        if directionDouble.contains(".") {
+            directionDouble = direciton.description.components(separatedBy: ".").first!
+        }
+        
+        
+        if (direciton >= 315) || (direciton < 45) {
+            directionWord = "北"
+        }else if (direciton >= 45) && (direciton < 135) {
+            directionWord = "東"
+        }else if (direciton >= 135) && (direciton < 225) {
+            directionWord = "南"
+        }else if (direciton >= 225) && (direciton < 315) {
+            directionWord = "西"
+        }
+        
+        self.compassLabel.text = directionWord + ":" + directionDouble
     }
 }

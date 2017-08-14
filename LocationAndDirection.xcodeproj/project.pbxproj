@@ -17,6 +17,7 @@
 		C0F61CF41F41713400F641E3 /* HereLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF31F41713400F641E3 /* HereLocationView.swift */; };
 		C0F61CF61F41715500F641E3 /* PurposeLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */; };
 		C0F61CF81F41717300F641E3 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF71F41717300F641E3 /* CompassView.swift */; };
+		C0F61CFE1F41740B00F641E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F61CFD1F41740B00F641E3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C0F61CF31F41713400F641E3 /* HereLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HereLocationView.swift; sourceTree = "<group>"; };
 		C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurposeLocationView.swift; sourceTree = "<group>"; };
 		C0F61CF71F41717300F641E3 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		C0F61CFD1F41740B00F641E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F61CFE1F41740B00F641E3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 				C0F61CCD1F41696100F641E3 /* LocationAndDirectionTests */,
 				C0F61CD81F41696100F641E3 /* LocationAndDirectionUITests */,
 				C0F61CB71F41696100F641E3 /* Products */,
+				C0F61CFC1F41740A00F641E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +136,14 @@
 				C0F61CDB1F41696100F641E3 /* Info.plist */,
 			);
 			path = LocationAndDirectionUITests;
+			sourceTree = "<group>";
+		};
+		C0F61CFC1F41740A00F641E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0F61CFD1F41740B00F641E3 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

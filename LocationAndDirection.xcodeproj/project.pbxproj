@@ -14,6 +14,9 @@
 		C0F61CC41F41696100F641E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F61CC21F41696100F641E3 /* LaunchScreen.storyboard */; };
 		C0F61CCF1F41696100F641E3 /* LocationAndDirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CCE1F41696100F641E3 /* LocationAndDirectionTests.swift */; };
 		C0F61CDA1F41696100F641E3 /* LocationAndDirectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CD91F41696100F641E3 /* LocationAndDirectionUITests.swift */; };
+		C0F61CF41F41713400F641E3 /* HereLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF31F41713400F641E3 /* HereLocationView.swift */; };
+		C0F61CF61F41715500F641E3 /* PurposeLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */; };
+		C0F61CF81F41717300F641E3 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CF71F41717300F641E3 /* CompassView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C0F61CD51F41696100F641E3 /* LocationAndDirectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationAndDirectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F61CD91F41696100F641E3 /* LocationAndDirectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAndDirectionUITests.swift; sourceTree = "<group>"; };
 		C0F61CDB1F41696100F641E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F61CF31F41713400F641E3 /* HereLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HereLocationView.swift; sourceTree = "<group>"; };
+		C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurposeLocationView.swift; sourceTree = "<group>"; };
+		C0F61CF71F41717300F641E3 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				C0F61CC01F41696100F641E3 /* Assets.xcassets */,
 				C0F61CC21F41696100F641E3 /* LaunchScreen.storyboard */,
 				C0F61CC51F41696100F641E3 /* Info.plist */,
+				C0F61CF31F41713400F641E3 /* HereLocationView.swift */,
+				C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */,
+				C0F61CF71F41717300F641E3 /* CompassView.swift */,
 			);
 			path = LocationAndDirection;
 			sourceTree = "<group>";
@@ -264,6 +273,9 @@
 			files = (
 				C0F61CBC1F41696100F641E3 /* ViewController.swift in Sources */,
 				C0F61CBA1F41696100F641E3 /* AppDelegate.swift in Sources */,
+				C0F61CF81F41717300F641E3 /* CompassView.swift in Sources */,
+				C0F61CF61F41715500F641E3 /* PurposeLocationView.swift in Sources */,
+				C0F61CF41F41713400F641E3 /* HereLocationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +526,7 @@
 				C0F61CE01F41696100F641E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0F61CE11F41696100F641E3 /* Build configuration list for PBXNativeTarget "LocationAndDirectionTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				C0F61CE31F41696100F641E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0F61CE41F41696100F641E3 /* Build configuration list for PBXNativeTarget "LocationAndDirectionUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				C0F61CE61F41696100F641E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

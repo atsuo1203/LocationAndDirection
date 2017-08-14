@@ -150,6 +150,10 @@ longitude</string>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ia2-En-Kx7">
+                                        <rect key="frame" x="145" y="380" width="48" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -174,6 +178,7 @@ longitude</string>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="626" height="626"/>
         <image name="compass" width="368" height="368"/>
     </resources>
 </document>

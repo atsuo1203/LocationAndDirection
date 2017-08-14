@@ -104,7 +104,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         
         if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
             let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
-            compassRoutetion(direciton: direction)
+//            compassRoutetion(direciton: direction)
+            arrowRoutetion(direciton: direction)
         }
     }
     
@@ -167,6 +168,19 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         //let dirN0 = (dirE0 + 90) % 360; //(dirE0+90)÷360の余りを出力 北向きが０度の方向
         let dirN0 = (dirE0 + 90).truncatingRemainder(dividingBy: 360)
         return dirN0
+    }
+    
+    //起動時に矢印が回転する
+    private func arrowRoutetion(direciton: Double){
+        var d = direciton
+        if d > 360 {
+            d = d - 360
+        }
+        
+        //iが回転させたい角度
+        let i = CGFloat(-d)
+        let angle = i * CGFloat.pi / 180
+        arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
     
     //compassが回転する

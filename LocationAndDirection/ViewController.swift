@@ -53,6 +53,13 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
             locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
+            
+            //方位磁石の処理
+            // 何度動いたら更新するか（デフォルトは1度）
+            locationManager.headingFilter = kCLHeadingFilterNone
+            // デバイスのどの向きを北とするか（デフォルトは画面上部）
+            locationManager.headingOrientation = .portrait
+            locationManager.startUpdatingHeading()
         }
     }
     
@@ -99,6 +106,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
             let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
             compassRoutetion(direciton: direction)
         }
+    }
+    
+    //方位磁石をとる処理
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        print("".appendingFormat("%.2f", newHeading.magneticHeading))
+        print("aaaa")
     }
     
     //緯度経度から住所を決定し、現在地のlabelに貼り付ける

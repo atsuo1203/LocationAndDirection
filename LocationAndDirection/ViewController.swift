@@ -105,6 +105,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         lat1 = latitude
         lng1 = longtitude
         
+        if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
+            distanceCalculation()
+        }
     }
     
     //方位磁石をとる処理
@@ -222,5 +225,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         self.compassLabel.text = directionWord + ":" + directionDouble
+    }
+    
+    private func distanceCalculation() {
+        let here = CLLocation(latitude: lat1, longitude: lng1)
+        let purpose = CLLocation(latitude: lat2, longitude: lng2)
+        let distance = purpose.distance(from: here)
+        distanceLabel.text = distance.description
     }
 }

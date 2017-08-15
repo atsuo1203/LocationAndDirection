@@ -25,6 +25,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     @IBOutlet weak var compassImageView: UIImageView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBAction func buttonPushed(_ sender: UIButton) {
         print("押されました")
         purposeSetting(text: (purposTextField.text?.description)!)

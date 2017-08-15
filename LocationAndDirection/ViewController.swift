@@ -102,11 +102,6 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         lat1 = latitude
         lng1 = longtitude
         
-        if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
-            let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
-//            compassRoutetion(direciton: direction)
-            arrowRoutetion(direciton: direction)
-        }
     }
     
     //方位磁石をとる処理
@@ -114,6 +109,13 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
         print("".appendingFormat("%.2f", newHeading.magneticHeading))
         print("aaaa")
         print(newHeading.magneticHeading)
+        print(newHeading.magneticHeading.binade)
+        
+        if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
+            let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
+            compassRoutetion(direciton: newHeading.magneticHeading)
+            arrowRoutetion(direciton: direction + newHeading.magneticHeading)
+        }
     }
     
     //緯度経度から住所を決定し、現在地のlabelに貼り付ける

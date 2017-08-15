@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import Foundation
 
-class ViewController: UIViewController ,CLLocationManagerDelegate{
+class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDelegate{
 
     @IBOutlet weak var hereLocationView: HereLocationView!
     @IBOutlet weak var purposeLocationView: PurposeLocationView!
@@ -19,7 +19,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var hereLabel: UILabel!
     @IBOutlet weak var hereLat: UILabel!
     @IBOutlet weak var hereLong: UILabel!
-    @IBOutlet weak var purposeLabel: UILabel!
+    @IBOutlet weak var purposTextField: UITextField!
     @IBOutlet weak var purposLat: UILabel!
     @IBOutlet weak var purposLong: UILabel!
     @IBOutlet weak var compassImageView: UIImageView!
@@ -27,6 +27,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBAction func buttonPushed(_ sender: UIButton) {
         print("押されました")
+        purposeSetting(text: (purposTextField.text?.description)!)
+        purposTextField.endEditing(true)
     }
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
@@ -38,7 +40,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        purposeSetting()
+        purposTextField.delegate = self
         getLocation()
     }
 
@@ -142,16 +144,15 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
     //目的地のlabelや住所を手動入力
-    private func purposeSetting(){
+    private func purposeSetting(text: String){
 //        //春日部
 //        let address = "埼玉県春日部市大沼"
 //        //蓮田駅
 //        let address = "東京都大田区蒲田４丁目５０−１０"
         //品川水族館
-        let address = "東京都品川区勝島3-2-1"
-        self.purposeLabel.text = address
+//        let address = "東京都品川区勝島3-2-1"
         let geocorder = CLGeocoder()
-        geocorder.geocodeAddressString(address) { (response, error) in
+        geocorder.geocodeAddressString(text) { (response, error) in
             let res = response?.first
             self.purposLat.text = res?.location?.coordinate.latitude.description
             self.purposLong.text = res?.location?.coordinate.longitude.description

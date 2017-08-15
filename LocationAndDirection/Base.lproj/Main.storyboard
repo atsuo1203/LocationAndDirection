@@ -82,13 +82,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="purposLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgg-qb-Q3m">
-                                                        <rect key="frame" x="8" y="37" width="144" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="緯度経度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vo-zb-p5g">
                                                         <rect key="frame" x="8" y="66" width="70" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -119,6 +112,13 @@ longitude</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZH-dx-H6M">
+                                                        <rect key="frame" x="8" y="28" width="144" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -179,7 +179,7 @@ longitude</string>
                         <outlet property="hereLong" destination="dYH-UY-zyQ" id="Zc8-2X-Rgs"/>
                         <outlet property="purposLat" destination="zjJ-1g-FIW" id="a3s-ya-Nfb"/>
                         <outlet property="purposLong" destination="Sdb-WX-ezt" id="rjY-WN-q1d"/>
-                        <outlet property="purposeLabel" destination="sgg-qb-Q3m" id="Rvc-ta-yCx"/>
+                        <outlet property="purposTextField" destination="7ZH-dx-H6M" id="21V-OK-L8B"/>
                         <outlet property="purposeLocationView" destination="zVx-mf-ZQa" id="6PN-md-az8"/>
                     </connections>
                 </viewController>

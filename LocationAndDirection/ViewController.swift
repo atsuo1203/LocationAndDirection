@@ -19,7 +19,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var hereLabel: UILabel!
     @IBOutlet weak var hereLat: UILabel!
     @IBOutlet weak var hereLong: UILabel!
-    @IBOutlet weak var purposeLabel: UILabel!
+    @IBOutlet weak var purposTextField: UITextField!
     @IBOutlet weak var purposLat: UILabel!
     @IBOutlet weak var purposLong: UILabel!
     @IBOutlet weak var compassImageView: UIImageView!
@@ -149,7 +149,6 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
 //        let address = "東京都大田区蒲田４丁目５０−１０"
         //品川水族館
         let address = "東京都品川区勝島3-2-1"
-        self.purposeLabel.text = address
         let geocorder = CLGeocoder()
         geocorder.geocodeAddressString(address) { (response, error) in
             let res = response?.first

@@ -119,12 +119,34 @@ longitude</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-Tw-I0L">
-                                                        <rect key="frame" x="119" y="246" width="31" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WP7-d4-Vr2">
+                                                        <rect key="frame" x="93" y="246" width="57" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="決定"/>
+                                                        <state key="normal" title="②IP接続"/>
                                                         <connections>
-                                                            <action selector="buttonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Csq-En-3do"/>
+                                                            <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sev-Ui-t3l"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IPAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6D-T3-WRu">
+                                                        <rect key="frame" x="8" y="153" width="77" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOT-il-QLe">
+                                                        <rect key="frame" x="8" y="182" width="142" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX8-1Q-unr">
+                                                        <rect key="frame" x="8" y="246" width="59" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="①目的地"/>
+                                                        <connections>
+                                                            <action selector="purposeButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="huo-47-bnd"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -145,7 +167,7 @@ longitude</string>
                                                         <rect key="frame" x="43" y="33" width="240" height="240"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="北:0度" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTT-Sc-QVc">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="方向" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTT-Sc-QVc">
                                                         <rect key="frame" x="219" y="278" width="100" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -159,6 +181,22 @@ longitude</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-Tw-I0L">
+                                                        <rect key="frame" x="179" y="0.0" width="44" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="③送信"/>
+                                                        <connections>
+                                                            <action selector="sendButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yag-mI-gkk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-tR-gMG">
+                                                        <rect key="frame" x="261" y="0.0" width="44" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="④終了"/>
+                                                        <connections>
+                                                            <action selector="endButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="33S-qV-eVz"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -185,6 +223,7 @@ longitude</string>
                         <outlet property="hereLat" destination="JkJ-QV-htr" id="qrW-lm-6RG"/>
                         <outlet property="hereLocationView" destination="xWx-47-0eU" id="bKT-pk-jBV"/>
                         <outlet property="hereLong" destination="dYH-UY-zyQ" id="Zc8-2X-Rgs"/>
+                        <outlet property="ipTextField" destination="BOT-il-QLe" id="itv-h6-UbS"/>
                         <outlet property="purposLat" destination="zjJ-1g-FIW" id="a3s-ya-Nfb"/>
                         <outlet property="purposLong" destination="Sdb-WX-ezt" id="rjY-WN-q1d"/>
                         <outlet property="purposTextField" destination="7ZH-dx-H6M" id="21V-OK-L8B"/>

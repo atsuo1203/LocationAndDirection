@@ -22,14 +22,26 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     @IBOutlet weak var purposTextField: UITextField!
     @IBOutlet weak var purposLat: UILabel!
     @IBOutlet weak var purposLong: UILabel!
+    @IBOutlet weak var ipTextField: UITextField!
     @IBOutlet weak var compassImageView: UIImageView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBAction func buttonPushed(_ sender: UIButton) {
-        print("押されました")
+    @IBAction func purposeButtonPushed(_ sender: UIButton) {
         purposeSetting(text: (purposTextField.text?.description)!)
         purposTextField.endEditing(true)
+    }
+    @IBAction func connectButtonPushed(_ sender: UIButton) {
+        connectuion1.connect(address: ipTextField.text!)
+        ipTextField.endEditing(true)
+    }
+    @IBAction func sendButtonPushed(_ sender: UIButton) {
+        if compassLabel.text != "方向" {
+            connectuion1.sendCommand(command: compassLabel.text!)
+        }
+    }
+    @IBAction func endButtonPushed(_ sender: UIButton) {
+        connectuion1.sendCommand(command: "end")
     }
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
@@ -37,6 +49,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     
     //geoDirection()で計算を行うため存在する
     var lat1,lng1,lat2,lng2: CLLocationDegrees!
+    
+    //Socketのメソッド
+    var connectuion1 = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,15 +127,17 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     
     //方位磁石をとる処理
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print("".appendingFormat("%.2f", newHeading.magneticHeading))
-        print("aaaa")
-        print(newHeading.magneticHeading)
-        print(newHeading.magneticHeading.binade)
+//        print("".appendingFormat("%.2f", newHeading.magneticHeading))
+//        print("aaaa")
+//        print(newHeading.magneticHeading)
+//        print(newHeading.magneticHeading.binade)
         
         if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
             let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
-            compassRoutetion(direciton: newHeading.magneticHeading)
-            arrowRoutetion(direciton: direction + newHeading.magneticHeading)
+            let coD = 360 - newHeading.magneticHeading
+            let arD = coD + direction
+            compassRoutetion(direciton: coD)
+            arrowRoutetion(direciton: arD)
         }
     }
     
@@ -190,9 +207,27 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         //iが回転させたい角度
-        let i = CGFloat(-d)
+        let i = CGFloat(d)
         let angle = i * CGFloat.pi / 180
         arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
+        
+        var directionWord = ""
+        var directionDouble = d.description
+       
+        if directionDouble.contains(".") {
+            directionDouble = d.description.components(separatedBy: ".").first!
+        }
+        
+        if (d >= 315) || (d < 45) {
+            directionWord = "前"
+        }else if (d >= 45) && (d < 135) {
+            directionWord = "右"
+        }else if (d >= 135) && (d < 225) {
+            directionWord = "後"
+        }else if (d >= 225) && (d < 315) {
+            directionWord = "左"
+        }
+        self.compassLabel.text = directionWord + ":" + directionDouble + "度"
     }
     
     //compassが回転する
@@ -203,28 +238,11 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         //iが回転させたい角度
-        let i = CGFloat(-d)
+        let i = CGFloat(d)
         let angle = i * CGFloat.pi / 180
         compassImageView.transform = CGAffineTransform(rotationAngle: angle)
         
-        var directionWord = ""
-        var directionDouble = d.description
-       
-        if directionDouble.contains(".") {
-            directionDouble = d.description.components(separatedBy: ".").first!
-        }
         
-        if (d >= 315) || (d < 45) {
-            directionWord = "北"
-        }else if (d >= 45) && (d < 135) {
-            directionWord = "東"
-        }else if (d >= 135) && (d < 225) {
-            directionWord = "南"
-        }else if (d >= 225) && (d < 315) {
-            directionWord = "西"
-        }
-        
-        self.compassLabel.text = directionWord + ":" + directionDouble
     }
     
     private func distanceCalculation() {

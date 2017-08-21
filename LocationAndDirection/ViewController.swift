@@ -22,6 +22,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     @IBOutlet weak var purposTextField: UITextField!
     @IBOutlet weak var purposLat: UILabel!
     @IBOutlet weak var purposLong: UILabel!
+    @IBOutlet weak var ipTextField: UITextField!
     @IBOutlet weak var compassImageView: UIImageView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
@@ -30,12 +31,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         print("押されました")
         purposeSetting(text: (purposTextField.text?.description)!)
         purposTextField.endEditing(true)
-        if (purposTextField.text?.utf8.count)! > 0 {
-            connectuion1.sendCommand(command: (purposTextField.text?.description)!)
+        if (purposTextField.text! as NSString).length > 0 {
+            connectuion1.sendCommand(command: purposTextField.text!)
         }
     }
     @IBAction func connectButtonPushed(_ sender: UIButton) {
-        connectuion1.connect()
+        connectuion1.connect(address: ipTextField.text!)
     }
     @IBAction func endButtonPushed(_ sender: UIButton) {
         connectuion1.sendCommand(command: "end")

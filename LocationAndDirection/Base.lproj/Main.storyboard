@@ -143,6 +143,20 @@ longitude</string>
                                                             <action selector="endButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40c-LB-2tX"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IPAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6D-T3-WRu">
+                                                        <rect key="frame" x="8" y="153" width="77" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOT-il-QLe">
+                                                        <rect key="frame" x="8" y="182" width="142" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -201,6 +215,7 @@ longitude</string>
                         <outlet property="hereLat" destination="JkJ-QV-htr" id="qrW-lm-6RG"/>
                         <outlet property="hereLocationView" destination="xWx-47-0eU" id="bKT-pk-jBV"/>
                         <outlet property="hereLong" destination="dYH-UY-zyQ" id="Zc8-2X-Rgs"/>
+                        <outlet property="ipTextField" destination="BOT-il-QLe" id="itv-h6-UbS"/>
                         <outlet property="purposLat" destination="zjJ-1g-FIW" id="a3s-ya-Nfb"/>
                         <outlet property="purposLong" destination="Sdb-WX-ezt" id="rjY-WN-q1d"/>
                         <outlet property="purposTextField" destination="7ZH-dx-H6M" id="21V-OK-L8B"/>

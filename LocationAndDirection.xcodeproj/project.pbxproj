@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03355161F4ADE55003DAD04 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03355151F4ADE55003DAD04 /* Connection.swift */; };
 		C0F61CBA1F41696100F641E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CB91F41696100F641E3 /* AppDelegate.swift */; };
 		C0F61CBC1F41696100F641E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F61CBB1F41696100F641E3 /* ViewController.swift */; };
 		C0F61CBF1F41696100F641E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F61CBD1F41696100F641E3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C03355151F4ADE55003DAD04 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		C0F61CB61F41696100F641E3 /* LocationAndDirection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAndDirection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F61CB91F41696100F641E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F61CBB1F41696100F641E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				C0F61CF31F41713400F641E3 /* HereLocationView.swift */,
 				C0F61CF51F41715500F641E3 /* PurposeLocationView.swift */,
 				C0F61CF71F41717300F641E3 /* CompassView.swift */,
+				C03355151F4ADE55003DAD04 /* Connection.swift */,
 			);
 			path = LocationAndDirection;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F61CBC1F41696100F641E3 /* ViewController.swift in Sources */,
+				C03355161F4ADE55003DAD04 /* Connection.swift in Sources */,
 				C0F61CBA1F41696100F641E3 /* AppDelegate.swift in Sources */,
 				C0F61CF81F41717300F641E3 /* CompassView.swift in Sources */,
 				C0F61CF61F41715500F641E3 /* PurposeLocationView.swift in Sources */,

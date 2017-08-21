@@ -231,6 +231,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         let here = CLLocation(latitude: lat1, longitude: lng1)
         let purpose = CLLocation(latitude: lat2, longitude: lng2)
         let distance = purpose.distance(from: here)
-        distanceLabel.text = distance.description
+        let k = Int(distance / 1000)
+        let m = Double(distance) - Double(k * 1000)
+        var mStr = m.description
+        if mStr.contains(".") {
+            mStr = mStr.components(separatedBy: ".").first!
+        }
+        distanceLabel.text = k.description + "Km" + mStr + "m"
     }
 }

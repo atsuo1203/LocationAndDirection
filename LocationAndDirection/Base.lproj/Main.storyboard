@@ -132,7 +132,15 @@ longitude</string>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="接続"/>
                                                         <connections>
-                                                            <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zv2-lS-CkJ"/>
+                                                            <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gue-ea-x2R"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-tR-gMG">
+                                                        <rect key="frame" x="65" y="246" width="31" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="終了"/>
+                                                        <connections>
+                                                            <action selector="endButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40c-LB-2tX"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

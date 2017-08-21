@@ -27,16 +27,18 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBAction func buttonPushed(_ sender: UIButton) {
-        print("押されました")
+    @IBAction func purposeButtonPushed(_ sender: UIButton) {
         purposeSetting(text: (purposTextField.text?.description)!)
         purposTextField.endEditing(true)
-        if (purposTextField.text! as NSString).length > 0 {
-            connectuion1.sendCommand(command: purposTextField.text!)
-        }
     }
     @IBAction func connectButtonPushed(_ sender: UIButton) {
         connectuion1.connect(address: ipTextField.text!)
+        ipTextField.endEditing(true)
+    }
+    @IBAction func sendButtonPushed(_ sender: UIButton) {
+        if (purposTextField.text! as NSString).length > 0 {
+            connectuion1.sendCommand(command: purposTextField.text!)
+        }
     }
     @IBAction func endButtonPushed(_ sender: UIButton) {
         connectuion1.sendCommand(command: "end")

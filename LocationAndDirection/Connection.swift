@@ -59,14 +59,14 @@ class Connection: NSObject, StreamDelegate {
         print("Send: \(command)")
 
 //>> なくてもok
-        while(!inputStream.hasBytesAvailable){}
-        let bufferSize = 1024
-        var buffer = Array<UInt8>(repeating: 0, count: bufferSize)
-        let bytesRead = inputStream.read(&buffer, maxLength: bufferSize)
-        if (bytesRead >= 0) {
-            let read = String(bytes: buffer, encoding: String.Encoding.utf8)!
-            print("Receive: \(read)")
-        }
+//        while(!inputStream.hasBytesAvailable){}
+//        let bufferSize = 1024
+//        var buffer = Array<UInt8>(repeating: 0, count: bufferSize)
+//        let bytesRead = inputStream.read(&buffer, maxLength: bufferSize)
+//        if (bytesRead >= 0) {
+//            let read = String(bytes: buffer, encoding: String.Encoding.utf8)!
+//            print("Receive: \(read)")
+//        }
 //<< なくてもok
 
         //"end"を受信したら接続切断

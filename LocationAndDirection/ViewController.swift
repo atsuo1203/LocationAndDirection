@@ -134,8 +134,10 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         
         if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
             let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)
-            compassRoutetion(direciton: newHeading.magneticHeading)
-            arrowRoutetion(direciton: direction + newHeading.magneticHeading)
+            let coD = 360 - newHeading.magneticHeading
+            let arD = coD + direction
+            compassRoutetion(direciton: coD)
+            arrowRoutetion(direciton: arD)
         }
     }
     
@@ -205,7 +207,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         //iが回転させたい角度
-        let i = CGFloat(-d)
+        let i = CGFloat(d)
         let angle = i * CGFloat.pi / 180
         arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
@@ -218,7 +220,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         //iが回転させたい角度
-        let i = CGFloat(-d)
+        let i = CGFloat(d)
         let angle = i * CGFloat.pi / 180
         compassImageView.transform = CGAffineTransform(rotationAngle: angle)
         

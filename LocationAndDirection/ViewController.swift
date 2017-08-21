@@ -31,6 +31,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         purposeSetting(text: (purposTextField.text?.description)!)
         purposTextField.endEditing(true)
     }
+    @IBAction func connectButtonPushed(_ sender: Any) {
+    }
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
     var locationManager:CLLocationManager!

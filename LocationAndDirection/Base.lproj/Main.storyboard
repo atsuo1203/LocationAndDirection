@@ -119,16 +119,8 @@ longitude</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-Tw-I0L">
-                                                        <rect key="frame" x="106" y="220" width="44" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="③送信"/>
-                                                        <connections>
-                                                            <action selector="sendButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yag-mI-gkk"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WP7-d4-Vr2">
-                                                        <rect key="frame" x="8" y="246" width="57" height="30"/>
+                                                        <rect key="frame" x="93" y="246" width="57" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="②IP接続"/>
                                                         <connections>
@@ -150,19 +142,11 @@ longitude</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX8-1Q-unr">
-                                                        <rect key="frame" x="8" y="220" width="59" height="30"/>
+                                                        <rect key="frame" x="8" y="246" width="59" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="①目的地"/>
                                                         <connections>
                                                             <action selector="purposeButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="huo-47-bnd"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-tR-gMG">
-                                                        <rect key="frame" x="108" y="246" width="44" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="④終了"/>
-                                                        <connections>
-                                                            <action selector="endButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="33S-qV-eVz"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -197,6 +181,22 @@ longitude</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-Tw-I0L">
+                                                        <rect key="frame" x="179" y="0.0" width="44" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="③送信"/>
+                                                        <connections>
+                                                            <action selector="sendButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yag-mI-gkk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-tR-gMG">
+                                                        <rect key="frame" x="261" y="0.0" width="44" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="④終了"/>
+                                                        <connections>
+                                                            <action selector="endButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="33S-qV-eVz"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>

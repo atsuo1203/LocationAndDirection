@@ -124,10 +124,10 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     
     //方位磁石をとる処理
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print("".appendingFormat("%.2f", newHeading.magneticHeading))
-        print("aaaa")
-        print(newHeading.magneticHeading)
-        print(newHeading.magneticHeading.binade)
+//        print("".appendingFormat("%.2f", newHeading.magneticHeading))
+//        print("aaaa")
+//        print(newHeading.magneticHeading)
+//        print(newHeading.magneticHeading.binade)
         
         if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
             let direction = geoDirection(lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2)

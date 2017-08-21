@@ -36,8 +36,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         ipTextField.endEditing(true)
     }
     @IBAction func sendButtonPushed(_ sender: UIButton) {
-        if (purposTextField.text! as NSString).length > 0 {
-            connectuion1.sendCommand(command: purposTextField.text!)
+        if compassLabel.text != "方向" {
+            connectuion1.sendCommand(command: compassLabel.text!)
         }
     }
     @IBAction func endButtonPushed(_ sender: UIButton) {
@@ -210,6 +210,24 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         let i = CGFloat(d)
         let angle = i * CGFloat.pi / 180
         arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
+        
+        var directionWord = ""
+        var directionDouble = d.description
+       
+        if directionDouble.contains(".") {
+            directionDouble = d.description.components(separatedBy: ".").first!
+        }
+        
+        if (d >= 315) || (d < 45) {
+            directionWord = "前"
+        }else if (d >= 45) && (d < 135) {
+            directionWord = "右"
+        }else if (d >= 135) && (d < 225) {
+            directionWord = "後"
+        }else if (d >= 225) && (d < 315) {
+            directionWord = "左"
+        }
+        self.compassLabel.text = directionWord + ":" + directionDouble + "度"
     }
     
     //compassが回転する
@@ -224,24 +242,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         let angle = i * CGFloat.pi / 180
         compassImageView.transform = CGAffineTransform(rotationAngle: angle)
         
-        var directionWord = ""
-        var directionDouble = d.description
-       
-        if directionDouble.contains(".") {
-            directionDouble = d.description.components(separatedBy: ".").first!
-        }
         
-        if (d >= 315) || (d < 45) {
-            directionWord = "北"
-        }else if (d >= 45) && (d < 135) {
-            directionWord = "東"
-        }else if (d >= 135) && (d < 225) {
-            directionWord = "南"
-        }else if (d >= 225) && (d < 315) {
-            directionWord = "西"
-        }
-        
-        self.compassLabel.text = directionWord + ":" + directionDouble
     }
     
     private func distanceCalculation() {

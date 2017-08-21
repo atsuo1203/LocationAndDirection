@@ -30,8 +30,12 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         print("押されました")
         purposeSetting(text: (purposTextField.text?.description)!)
         purposTextField.endEditing(true)
+        if (purposTextField.text?.utf8.count)! > 0 {
+            connectuion1.sendCommand(command: (purposTextField.text?.description)!)
+        }
     }
     @IBAction func connectButtonPushed(_ sender: Any) {
+        connectuion1.connect()
     }
     //現在地座標
     var hereLocation: CLLocationCoordinate2D?
@@ -39,6 +43,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     
     //geoDirection()で計算を行うため存在する
     var lat1,lng1,lat2,lng2: CLLocationDegrees!
+    
+    //Socketのメソッド
+    var connectuion1 = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()

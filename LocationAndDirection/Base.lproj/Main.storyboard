@@ -152,6 +152,13 @@ longitude</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="距離" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plt-wy-2Yk">
+                                                        <rect key="frame" x="8" y="278" width="147" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -173,6 +180,7 @@ longitude</string>
                         <outlet property="compassImageView" destination="SN1-lK-FMu" id="B8o-ie-IBr"/>
                         <outlet property="compassLabel" destination="oTT-Sc-QVc" id="0BV-T9-ZAD"/>
                         <outlet property="compassView" destination="OMI-kw-5IM" id="AJQ-Le-7X8"/>
+                        <outlet property="distanceLabel" destination="plt-wy-2Yk" id="2UV-HL-zWc"/>
                         <outlet property="hereLabel" destination="hxO-tM-Iqa" id="8Ev-Gm-60C"/>
                         <outlet property="hereLat" destination="JkJ-QV-htr" id="qrW-lm-6RG"/>
                         <outlet property="hereLocationView" destination="xWx-47-0eU" id="bKT-pk-jBV"/>

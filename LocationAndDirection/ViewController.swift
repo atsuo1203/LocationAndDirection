@@ -25,6 +25,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
     @IBOutlet weak var compassImageView: UIImageView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBAction func buttonPushed(_ sender: UIButton) {
         print("押されました")
         purposeSetting(text: (purposTextField.text?.description)!)
@@ -104,6 +105,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         lat1 = latitude
         lng1 = longtitude
         
+        if (lat1 != nil) && (lng1 != nil) && (lat2 != nil) && (lng2 != nil) {
+            distanceCalculation()
+        }
     }
     
     //方位磁石をとる処理
@@ -221,5 +225,18 @@ class ViewController: UIViewController ,CLLocationManagerDelegate ,UITextFieldDe
         }
         
         self.compassLabel.text = directionWord + ":" + directionDouble
+    }
+    
+    private func distanceCalculation() {
+        let here = CLLocation(latitude: lat1, longitude: lng1)
+        let purpose = CLLocation(latitude: lat2, longitude: lng2)
+        let distance = purpose.distance(from: here)
+        let k = Int(distance / 1000)
+        let m = Double(distance) - Double(k * 1000)
+        var mStr = m.description
+        if mStr.contains(".") {
+            mStr = mStr.components(separatedBy: ".").first!
+        }
+        distanceLabel.text = k.description + "Km" + mStr + "m"
     }
 }
